@@ -23,12 +23,12 @@ jobs:
           python3 -m pip install wheel
           python3 -m pip install .
           git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-          git clone https://github.com/flutter/engine.git
+          git clone https://github.com/flutter/flutter.git
       - name: gclient sync
         run: |
           ROOT_DIR=`pwd`
           export PATH=$PATH:$ROOT_DIR/depot_tools
-          cd engine
+          cd flutter/engine
           git config --global user.email "reflutter@example.com" && git config --global user.name "reflutter"
           git fetch origin $(reflutter -b ${{env.SNAPSHOT_HASH}})
           git reset --hard FETCH_HEAD
@@ -84,12 +84,12 @@ jobs:
           python3 -m pip install wheel
           python3 -m pip install .
           git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-          git clone https://github.com/flutter/engine.git
+          git clone https://github.com/flutter/flutter.git
       - name: gclient sync
         run: |
           ROOT_DIR=`pwd`
           export PATH=$PATH:$ROOT_DIR/depot_tools
-          cd engine
+          cd flutter/engine
           git config --global user.email "reflutter@example.com" && git config --global user.name "reflutter"
           git fetch origin $(reflutter -b ${{env.SNAPSHOT_HASH}})
           git reset --hard FETCH_HEAD
