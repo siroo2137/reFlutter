@@ -28,7 +28,7 @@ jobs:
         run: |
           ROOT_DIR=`pwd`
           export PATH=$PATH:$ROOT_DIR/depot_tools
-          cd flutter/engine
+          cd flutter
           git config --global user.email "reflutter@example.com" && git config --global user.name "reflutter"
           git fetch origin $(reflutter -b ${{env.SNAPSHOT_HASH}})
           git reset --hard FETCH_HEAD
@@ -89,7 +89,7 @@ jobs:
         run: |
           ROOT_DIR=`pwd`
           export PATH=$PATH:$ROOT_DIR/depot_tools
-          cd flutter/engine
+          cd flutter
           git config --global user.email "reflutter@example.com" && git config --global user.name "reflutter"
           git fetch origin $(reflutter -b ${{env.SNAPSHOT_HASH}})
           git reset --hard FETCH_HEAD
